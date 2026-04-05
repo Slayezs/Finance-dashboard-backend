@@ -11,8 +11,11 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
     def get_permissions(self):
+        if self.action == 'create' and not AppUser.objects.exists():
+            return []
         if self.action == 'create':
-            return [IsAuthenticated(), IsAdminUserCustom()]  # 🔥 only admin
+            return [IsAuthenticated(), IsAdminUserCustom()]
+
         return [IsAuthenticated()]
 
 class FinancialRecordViewSet(viewsets.ModelViewSet):

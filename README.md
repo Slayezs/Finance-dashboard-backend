@@ -4,6 +4,44 @@ A role-based backend system for managing financial records with secure access co
 
 ---
 
+## 🌐 Live API
+
+Base URL:
+https://finance-dashboard-lilb.onrender.com/api/
+
+> Note: Since the API is secured, please create a user via `/api/users/` and obtain a JWT token using `/api/token/` before accessing other endpoints.
+> Note: All endpoints require JWT authentication.
+
+---
+
+## 🧪 How to Test (Live API)
+
+1. Create a user (if none exists):
+
+POST /api/users/
+
+{
+  "username": "admin",
+  "password": "admin123",
+  "role": "admin"
+}
+
+2. Get JWT Token:
+
+POST /api/token/
+
+3. Use token in header:
+
+Authorization: Bearer <access_token>
+
+4. Access endpoints:
+
+/api/users/
+/api/records/
+/api/summary/
+
+---
+
 ## 🚀 Features
 
 * 🔐 JWT Authentication (Login with token)
@@ -66,7 +104,7 @@ finance_dashboard/
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/finance-dashboard.git
+git clone https://github.com/Slayezs/Finance-dashboard-backend.git
 cd finance-dashboard
 ```
 
@@ -181,6 +219,15 @@ GET /api/summary/
 
 ---
 
+### Sample Summary Response
+
+{
+  "total_income": 10000,
+  "total_expense": 5000,
+  "net_balance": 5000
+}
+
+---
 ## 🔍 Filtering Examples
 
 ```http
