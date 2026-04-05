@@ -9,8 +9,7 @@ A role-based backend system for managing financial records with secure access co
 Base URL:
 https://finance-dashboard-lilb.onrender.com/api/
 
-> Note: Since the API is secured, please create a user via `/api/users/` and obtain a JWT token using `/api/token/` before accessing other endpoints.
-> Note: All endpoints require JWT authentication.
+> Note: Since the API is secured, please create a user via `/api/users/` (first user allowed without authentication) and obtain a JWT token using `/api/token/` before accessing other endpoints. All endpoints require JWT authentication.
 
 ---
 
